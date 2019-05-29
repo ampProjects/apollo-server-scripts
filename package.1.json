@@ -1,0 +1,43 @@
+{
+  "name": "apollo-server-scripts",
+  "version": "0.1.0-alpha.1",
+  "description": "Scripts collections for developing Apollo GraphQL Server",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "apollo-scripts": "./bin/apollo-scripts.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampProjects/apollo-scripts.git"
+  },
+  "author": "Antonio M. Pérez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ampProjects/apollo-server-scripts/issues"
+  },
+  "homepage": "https://github.com/ampProjects/apollo-server-scripts#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.2.0",
+    "chalk": "^2.4.1",
+    "cross-spawn": "^6.0.5",
+    "dotenv": "^6.2.0",
+    "dotenv-expand": "^4.2.0",
+    "fs-extra": "^7.0.1",
+    "ini": "^1.3.5",
+    "inquirer": "^6.3.1",
+    "lodash": "^4.17.11",
+    "nodemon": "^1.18.7"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  }
+}
