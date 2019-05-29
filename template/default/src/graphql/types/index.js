@@ -1,7 +1,7 @@
 import { mergeTypes } from 'merge-graphql-schemas';
 import { gql } from 'apollo-server-express';
 
-import defaultSchema from './default.schema';
+import defaultSchema from './default.graphql';
 
 const schemas = [
   defaultSchema,

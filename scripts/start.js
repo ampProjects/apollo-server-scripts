@@ -20,6 +20,19 @@ switch (config.provider.service) {
       { stdio: 'inherit' },
     );
     break;
+  case 'default':
+    // babel config for development mode
+    require('@babel/register');
+    require('@babel/polyfill');
+    // We make sure enviroments variables are read
+    require('../config/env'); // eslint-disable-line
+    spawn.sync(
+      'nodemon',
+      [`${paths.appSrc}/index`],
+      { stdio: 'inherit' },
+    );
+    
+    break;
   default:
     break;
 }

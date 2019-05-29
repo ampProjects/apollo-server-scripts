@@ -191,6 +191,7 @@ function project() {
         choices: [
           'New Project',
           'Existing Project',
+          'default'
         ],
       },
     ])
@@ -201,6 +202,33 @@ function project() {
           break;
         case 'Existing Project':
           // TODO:
+          break;
+        case 'default':
+          dependencies.push(
+            'express',
+            'apollo-server-express',
+            'graphql',
+            'apollo-errors',
+            'merge-graphql-schemas',
+            '@babel/polyfill',
+            '@babel/register',
+            '@babel/runtime',
+          );
+          devDependencies.push(
+            '@babel/cli',
+            '@babel/core',
+            '@babel/plugin-transform-runtime',
+            '@babel/preset-env',
+            'eslint',
+            'eslint-config-airbnb-base',
+            'eslint-plugin-import',
+          );
+          scripts = {
+            start: 'apollo-scripts start',
+            build: 'apollo-scripts build',
+          };
+          installPackages();
+          copyTemplate(`${answers.project}`);
           break;
         default:
           break;
