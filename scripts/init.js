@@ -219,6 +219,7 @@ function project() {
             '@babel/core',
             '@babel/plugin-transform-runtime',
             '@babel/preset-env',
+            '@babel/node',
             'eslint',
             'eslint-config-airbnb-base',
             'eslint-plugin-import',

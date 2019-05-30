@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 const chalk = require('chalk');
 const spawn = require('cross-spawn');
@@ -22,16 +23,17 @@ switch (config.provider.service) {
     break;
   case 'default':
     // babel config for development mode
+    console.log('Loading Babel ...');
     require('@babel/register');
     require('@babel/polyfill');
     // We make sure enviroments variables are read
     require('../config/env'); // eslint-disable-line
+    console.log(process.env.PORT);
     spawn.sync(
       'nodemon',
-      [`${paths.appSrc}/index`],
+      ['--exec', 'babel-node',`${paths.appSrc}/index`],
       { stdio: 'inherit' },
     );
-    
     break;
   default:
     break;
