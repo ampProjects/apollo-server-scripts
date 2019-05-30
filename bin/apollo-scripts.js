@@ -51,6 +51,15 @@ switch (script) {
     process.exit(result.status);
     break;
   }
+  case 'serve': {
+    const result = spawn.sync(
+      'node',
+      [require.resolve(`../scripts/${script}`)],
+      { stdio: 'inherit' },
+    );
+    process.exit(result.status);
+    break;
+  }
   default:
     console.log(`The script "${script}" is not available`);
     break;
