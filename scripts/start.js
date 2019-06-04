@@ -31,7 +31,7 @@ switch (config.provider.service) {
     console.log(process.env.PORT);
     spawn.sync(
       'nodemon',
-      ['--exec', 'babel-node',`${paths.appSrc}/index`],
+      ['--exec', 'babel-node', `${paths.appSrc}/index`],
       { stdio: 'inherit' },
     );
     break;

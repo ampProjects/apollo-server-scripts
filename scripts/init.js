@@ -144,10 +144,14 @@ function aws() {
             'eslint',
             'eslint-config-airbnb-base',
             'eslint-plugin-import',
+            'eslint-plugin-jest',
+            'jest',
+            'babel-jest',
           );
           scripts = {
             start: 'apollo-scripts start',
             deploy: 'apollo-scripts deploy',
+            test: 'apollo-scripts test',
           };
           installPackages();
           copyTemplate(`aws/${answers.configuration}`);
@@ -191,7 +195,7 @@ function project() {
         choices: [
           'New Project',
           'Existing Project',
-          'default'
+          'default',
         ],
       },
     ])
@@ -223,10 +227,14 @@ function project() {
             'eslint',
             'eslint-config-airbnb-base',
             'eslint-plugin-import',
+            'eslint-plugin-jest',
+            'jest',
+            'babel-jest',
           );
           scripts = {
             start: 'apollo-scripts start',
             build: 'apollo-scripts build',
+            test: 'apollo-scripts test',
           };
           installPackages();
           copyTemplate(`${answers.project}`);

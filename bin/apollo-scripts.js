@@ -34,9 +34,14 @@ switch (script) {
     break;
   }
   case 'test': {
+    const args = process.argv.slice(3);
+    const nodeArgs = [];
+    nodeArgs
+      .push(require.resolve(`../scripts/${script}`));
+    const arg = nodeArgs.concat(args);
     const result = spawn.sync(
       'node',
-      [require.resolve(`../scripts/${script}`)],
+      arg,
       { stdio: 'inherit' },
     );
     process.exit(result.status);
