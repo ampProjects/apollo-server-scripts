@@ -21,6 +21,13 @@ switch (config.provider.service) {
       { stdio: 'inherit' },
     );
     break;
+  case 'serverless-gateway':
+    spawn.sync(
+      'serverless',
+      ['offline', 'start'],
+      { stdio: 'inherit' },
+    );
+    break;
   case 'default':
     // babel config for development mode
     console.log('Loading Babel ...');

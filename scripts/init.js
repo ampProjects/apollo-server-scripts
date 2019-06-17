@@ -114,6 +114,7 @@ function aws() {
         message: 'Select the configuration you want to',
         choices: [
           'serverless',
+          'serverless-gateway',
         ],
       },
     ])
@@ -124,6 +125,44 @@ function aws() {
           dependencies.push(
             'apollo-server-lambda',
             'apollo-server-express',
+            'graphql',
+            'apollo-errors',
+            'merge-graphql-schemas',
+            '@babel/runtime',
+          );
+          devDependencies.push(
+            'serverless',
+            'serverless-offline',
+            'webpack',
+            'serverless-webpack',
+            'babel-loader',
+            '@babel/cli',
+            '@babel/core',
+            '@babel/plugin-transform-runtime',
+            '@babel/preset-env',
+            'serverless-dotenv-plugin',
+            'webpack-node-externals',
+            'eslint',
+            'eslint-config-airbnb-base',
+            'eslint-plugin-import',
+            'eslint-plugin-jest',
+            'jest',
+            'babel-jest',
+          );
+          scripts = {
+            start: 'apollo-scripts start',
+            deploy: 'apollo-scripts deploy',
+            test: 'apollo-scripts test',
+          };
+          installPackages();
+          copyTemplate(`aws/${answers.configuration}`);
+          break;
+        case 'serverless-gateway':
+          checkAwsCli();
+          dependencies.push(
+            'apollo-server-lambda',
+            'apollo-server-express',
+            '@apollo/gateway',
             'graphql',
             'apollo-errors',
             'merge-graphql-schemas',
